@@ -16,4 +16,20 @@ describe(MyHash) do
       expect(test_hash.key_exist?("monkeys")).to(eq(true))
     end
   end
+  describe("#value_exist?") do
+    it('checks if a hash has a specific value') do
+      test_hash = MyHash.new()
+      test_hash.myStore("monkeys", "crazy")
+      expect(test_hash.value_exist?("crazy")).to(eq(true))
+    end
+  end
+  describe("#hash_length") do
+    it('checks length of hash') do
+      test_hash = MyHash.new()
+      test_hash.myStore("monkeys", "crazy")
+      test_hash.myStore("kitten", "cute")
+      test_hash.myStore("puppy", "goofy")
+      expect(test_hash.hash_length()).to(eq(3))
+    end
+  end
 end
