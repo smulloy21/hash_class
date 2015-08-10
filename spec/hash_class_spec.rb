@@ -32,4 +32,13 @@ describe(MyHash) do
       expect(test_hash.hash_length()).to(eq(3))
     end
   end
+  describe('#hash_merge') do
+    it('merges two hashes into one') do
+      test_hash_a = MyHash.new()
+      test_hash_a.myStore("monkeys", "crazy")
+      test_hash_b = MyHash.new()
+      test_hash_b.myStore("puppies", "goofy")
+      expect(test_hash_a.hash_merge(test_hash_b)).to(eq([["monkeys", "crazy"], ["puppies", "goofy"]]))
+    end
+  end
 end
