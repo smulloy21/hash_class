@@ -1,7 +1,7 @@
-class MyHash
-  define_method(:initialize) do |key, value|
-    @key = key
-    @value = value
-    
-  end
-end
+source('https://rubygems.org')
+
+gem('sinatra')
+gem('sinatra-contrib')
+gem('rspec')
+gem('capybara')
+gem('pry')

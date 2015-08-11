@@ -43,9 +43,14 @@ class MyHash
     end
     counter
   end
-  define_method(:hash_merge) do |array_a|
-    array_a.each() do |subarray|
-      @array.push(subarray)
+  define_method(:return_array) do
+    @array
+  end
+  define_method(:hash_merge) do |array_b|
+    array_a = self.return_array()
+    array_b.return_array().each() do |subarray|
+      array_a.push(subarray)
     end
+    array_a
   end
 end
